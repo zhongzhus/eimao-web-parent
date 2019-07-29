@@ -14,7 +14,7 @@ import routes from './routes'
 // import Mock from './mock'
 // Mock.bootstrap();
 import axios from 'axios'
-axios.defaults.baseURL = ' https://www.easy-mock.com/mock/5d3efedadd425d65229ab109/plat'  //对应后端网关统一地址,接口路径的前缀
+axios.defaults.baseURL = 'http://localhost:4000/service'  //对应后端网关统一地址,接口路径的前缀
 // 将API方法绑定到全局  /plat/login
 Vue.prototype.$http = axios    //prototype:js对象的原型
 Vue.config.productionTip = false

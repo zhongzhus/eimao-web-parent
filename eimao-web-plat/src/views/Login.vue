@@ -68,11 +68,12 @@
                 }
               });*/
               //自己发送ajax
-              this.$http.post('/login',loginParams).then(res => {
+              this.$http.post('/user/login',loginParams).then(res => {
                   this.logining = false;
+                  console.debug(res);
                   //NProgress.done();
                   let { msg, stateCode, object ,success} = res.data;
-                  if ( !success) {
+                  if (!success) {
                       this.$message({
                           message: msg,
                           type: 'error'
@@ -83,9 +84,7 @@
                       //页面放出，跳转路径
                       this.$router.push({ path: '/echarts' });
                   }
-              })
-
-
+              });
           } else {
             console.log('error submit!!');
             return false;
